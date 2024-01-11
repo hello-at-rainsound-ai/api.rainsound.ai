@@ -4,6 +4,7 @@ use axum::routing::{get, post};
 
 mod routes;
 mod open_ai;
+mod image;
 
 #[tokio::main]
 async fn main() {
