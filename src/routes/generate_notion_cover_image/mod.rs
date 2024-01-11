@@ -13,7 +13,7 @@ pub async fn generate_notion_cover_image(
 // ) -> impl IntoResponse {
 
     let generated_image = open_ai::generate_image(request_body.prompt).unwrap();
-    let cropped_bytes = crate::image::get_cropped_image(generated_image.url.clone(), 1500, 600);
+    let cropped_bytes = crate::image::get_cropped_image(generated_image.url.clone(), 1792, 299);
 
     let id = Uuid::new_v4();
     let file_name = format!("static/{}.png", id);
@@ -39,7 +39,6 @@ pub async fn generate_notion_cover_image(
 }
 
 pub async fn test_generate_notion_cover_image() -> impl IntoResponse {
-
     let generated_image = open_ai::generate_image("a cute dog".to_string()).unwrap();
     let cropped_bytes = crate::image::get_cropped_image(generated_image.url.clone(), 1500, 600);
 
