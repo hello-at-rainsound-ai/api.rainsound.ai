@@ -1,0 +1,12 @@
+[package]
+name = "api.rainsound.ai"
+version = "0.1.0"
+edition = "2021"
+description = "The API server for rainsound.ai."
+license = "unlicensed"
+repository = "https://github.com/rainsound-ai/api.rainsound.ai/"
+
+[dependencies]
+maud = "0.25.0"
+axum = "0.7.3"
+tokio = { version = "1.35.1", features = ["full"] }
