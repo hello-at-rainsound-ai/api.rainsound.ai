@@ -10,6 +10,7 @@ mod image;
 async fn main() {
     let app = Router::new()
         .route("/generate-notion-cover-image", post(generate_notion_cover_image))
+        .route("/test-generate-notion-cover-image", get(test_generate_notion_cover_image))
         .route("/healthz", get(health_check))
         .fallback(not_found);
 
