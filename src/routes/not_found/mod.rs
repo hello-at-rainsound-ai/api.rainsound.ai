@@ -1,11 +1,8 @@
-use super::*;
-use maud::{html, Markup};
+use axum::{
+    http::StatusCode,
+    response::IntoResponse,
+};
 
-pub fn not_found_page() -> Markup {
-    layout(
-        "rainsound.ai: Page Not Found",
-        html! {
-            "Couldn't find that thing you were looking for."
-        },
-    )
+pub async fn not_found() -> impl IntoResponse {
+    (StatusCode::NOT_FOUND, "Not found.")
 }

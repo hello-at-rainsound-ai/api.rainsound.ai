@@ -1,5 +1,5 @@
 [package]
-name = "api.rainsound.ai"
+name = "api-rainsound-ai"
 version = "0.1.0"
 edition = "2021"
 description = "The API server for rainsound.ai."
@@ -8,5 +8,9 @@ repository = "https://github.com/rainsound-ai/api.rainsound.ai/"
 
 [dependencies]
 maud = "0.25.0"
-axum = "0.7.3"
+axum = { versin = "0.7.3", features = ["json"] }
 tokio = { version = "1.35.1", features = ["full"] }
+reqwest = { version = "0.11.23", features = ["blocking", "json"] }
+enum-iterator = "1.4.1"
+serde = { version = "1.0.195", features = ["derive"] }
+serde_json = "1.0.111"
